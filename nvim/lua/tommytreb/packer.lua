@@ -10,8 +10,10 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'},
-        {'nvim-telescope/telescope-fzf-native.nvim'},
-        {'nvim-treesitter/nvim-treesitter'}
+            {'nvim-telescope/telescope-fzf-native.nvim'},
+            {'nvim-treesitter/nvim-treesitter'}
+        }
     }
-}
+    use 'ThePrimeagen/harpoon'
+    use 'ThePrimeagen/git-worktree.nvim'
 end) 
