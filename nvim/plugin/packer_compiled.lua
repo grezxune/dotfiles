@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/tommy/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/home/tommy/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/tommy/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
