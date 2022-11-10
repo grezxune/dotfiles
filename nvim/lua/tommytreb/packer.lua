@@ -17,4 +17,9 @@ return require('packer').startup(function(use)
     }
     use 'ThePrimeagen/harpoon'
     use 'ThePrimeagen/git-worktree.nvim'
+    use {
+        'neoclide/coc.nvim',
+        branch = 'release'
+    }
+    use 'jparise/vim-graphql'
 end) 

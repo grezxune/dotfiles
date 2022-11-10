@@ -1,4 +1,5 @@
 local nnoremap = require("tommytreb.keymap").nnoremap
+local inoremap = require("tommytreb.keymap").inoremap
 
 nnoremap("<leader>pv", "<cmd>Ex<CR>")
 
@@ -18,3 +19,5 @@ nnoremap("<C-h>", function() require("harpoon.ui").nav_file(1) end, silent)
 nnoremap("<C-j>", function() require("harpoon.ui").nav_file(2) end, silent)
 nnoremap("<C-k>", function() require("harpoon.ui").nav_file(3) end, silent)
 nnoremap("<C-l>", function() require("harpoon.ui").nav_file(4) end, silent)
+
+-- COC
