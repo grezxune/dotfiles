@@ -31,4 +31,5 @@ return require('packer').startup(function(use)
     -- Color Schemes
     use('folke/tokyonight.nvim')
     use('EdenEast/nightfox.nvim')
+    use('xiyaowong/nvim-transparent')
 end) 

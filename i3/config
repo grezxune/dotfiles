@@ -309,3 +309,4 @@ bindsym XF86AudioPrev exec playerctl previous
 exec --no-startup-id feh --bg-fill ~/Documents/projects/nordic-wallpapers/wallpapers/nord_design.png
 
 exec compton
+

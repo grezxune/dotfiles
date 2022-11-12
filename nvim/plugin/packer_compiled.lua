@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/tommy/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
     url = "https://github.com/EdenEast/nightfox.nvim"
   },
+  ["nvim-transparent"] = {
+    loaded = true,
+    path = "/home/tommy/.local/share/nvim/site/pack/packer/start/nvim-transparent",
+    url = "https://github.com/xiyaowong/nvim-transparent"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/tommy/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
