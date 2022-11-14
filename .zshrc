@@ -90,7 +90,8 @@ alias sail='[ -f sail ] && sail || vendor/bin/sail'
 
 # Git
 alias g="git"
-alias gs="git s"
+alias gs="git status"
+alias gaa="git add ."
 alias nah="git reset --hard;git clean -df"
 alias co="git checkout"
 alias main='git checkout $([ `git rev-parse --quiet --verify master` ] && echo "master" || echo "main")'
