@@ -12,7 +12,8 @@
 
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
@@ -72,7 +73,6 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
 export EDITOR=vim
 export GIT_EDITOR=vim
 export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
-export ARTISAN_OPEN_ON_MAKE_EDITOR=nvr
 export FZF_DEFAULT_COMMAND='ag -u -g ""'
 
 unsetopt sharehistory
@@ -87,12 +87,6 @@ alias paste="xclip -o -selection clipboard"
 alias cat="bat"
 alias webcam="gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video2"
 alias sail='[ -f sail ] && sail || vendor/bin/sail'
-
-# Laravel
-alias a="artisan"
-alias tinker="artisan tinker"
-alias serve="artisan serve"
-alias mfs="artisan migrate:fresh --seed"
 
 # Git
 alias g="git"
@@ -138,3 +132,14 @@ export NVM_DIR="$HOME/.nvm"
     #~/.dotfiles/scripts/login.sh
 #fi
 alias luamake=/luamake
+
+source $ZSH/oh-my-zsh.sh
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source ~/powerlevel10k/powerlevel10k.zsh-theme
