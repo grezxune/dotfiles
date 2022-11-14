@@ -28,7 +28,7 @@ require("telescope").setup({
             additional_args = function(opts)
                 return {"--hidden"}
             end
-        },
+        }
     },
     --[[
 	extensions = {

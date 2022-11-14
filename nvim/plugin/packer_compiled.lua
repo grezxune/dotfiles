@@ -74,10 +74,35 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["coc.nvim"] = {
+  LuaSnip = {
     loaded = true,
-    path = "/home/tommy/.local/share/nvim/site/pack/packer/start/coc.nvim",
-    url = "https://github.com/neoclide/coc.nvim"
+    path = "/home/tommy/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/tommy/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/tommy/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/tommy/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/tommy/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["feline.nvim"] = {
+    loaded = true,
+    path = "/home/tommy/.local/share/nvim/site/pack/packer/start/feline.nvim",
+    url = "https://github.com/feline-nvim/feline.nvim"
   },
   ["git-worktree.nvim"] = {
     loaded = true,
@@ -94,6 +119,16 @@ _G.packer_plugins = {
     path = "/home/tommy/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
     url = "https://github.com/EdenEast/nightfox.nvim"
   },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/tommy/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/tommy/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
   ["nvim-transparent"] = {
     loaded = true,
     path = "/home/tommy/.local/share/nvim/site/pack/packer/start/nvim-transparent",
@@ -103,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tommy/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/tommy/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -133,11 +173,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tommy/.local/share/nvim/site/pack/packer/start/vim-graphql",
     url = "https://github.com/jparise/vim-graphql"
-  },
-  ["vim-tmux-navigator"] = {
-    loaded = true,
-    path = "/home/tommy/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
-    url = "https://github.com/christoomey/vim-tmux-navigator"
   }
 }
 

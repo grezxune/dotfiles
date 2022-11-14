@@ -11,25 +11,34 @@ return require('packer').startup(function(use)
     use('nvim-telescope/telescope.nvim')
     use('nvim-lua/plenary.nvim')
     use('nvim-telescope/telescope-fzf-native.nvim')
-    use('nvim-treesitter/nvim-treesitter')
+    use({
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    })
     use('ThePrimeagen/harpoon')
     use('ThePrimeagen/git-worktree.nvim')
-    use({
-        'neoclide/coc.nvim',
-        branch = 'release'
-    })
+    --use({
+        --'neoclide/coc.nvim',
+        --branch = 'release'
+    --})
     use('jparise/vim-graphql')
-    use('christoomey/vim-tmux-navigator')
-    --use('neovim/nvim-lspconfig')
-    --use('hrsh7th/cmp-nvim-lsp')
-    --use('hrsh7th/cmp-buffer')
-    --use('hrsh7th/nvim-cmp')
-    --use('onsails/lspkind-nvim')
-    --use('nvim-lua/lsp_extensions.nvim')
-    --use('glepnir/lspsaga.nvim')
+
+    use('neovim/nvim-lspconfig')
+    use('hrsh7th/nvim-cmp')
+    use('hrsh7th/cmp-nvim-lsp')
+    use('hrsh7th/cmp-buffer')
+    use('hrsh7th/cmp-path')
+    use('L3MON4D3/LuaSnip')
+    use('saadparwaiz1/cmp_luasnip')
+    --use("williamboman/mason.nvim")
+    --use("williamboman/mason-lspconfig.nvim")
+    --use("mfussenegger/nvim-dap")
+    --use("jose-elias-alvarez/null-ls.nvim")
 
     -- Color Schemes
     use('folke/tokyonight.nvim')
     use('EdenEast/nightfox.nvim')
     use('xiyaowong/nvim-transparent')
+    use('nvim-tree/nvim-web-devicons')
+    use('feline-nvim/feline.nvim')
 end) 
