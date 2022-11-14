@@ -1,1 +1,1 @@
-sudo apt install maim xclip
+sudo apt install maim xclip polybar
