@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "coc-css": "^2.0.0",
-    "coc-html": "^1.8.0",
-    "coc-json": ">=1.7.0",
-    "coc-tsserver": "^2.0.2"
-  }
-}
