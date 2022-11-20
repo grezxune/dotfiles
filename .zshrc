@@ -84,7 +84,7 @@ unsetopt sharehistory
 alias vim="nvim"
 alias copy="xclip -selection clipboard"
 alias paste="xclip -o -selection clipboard"
-alias cat="bat"
+alias cat="batcat"
 alias webcam="gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video2"
 alias sail='[ -f sail ] && sail || vendor/bin/sail'
 
@@ -144,3 +144,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+[[ -s /home/tommy/.autojump/etc/profile.d/autojump.sh ]] && source /home/tommy/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
