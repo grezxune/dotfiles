@@ -169,6 +169,11 @@ _G.packer_plugins = {
     path = "/home/tommy/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ["tree-sitter-prisma"] = {
+    loaded = true,
+    path = "/home/tommy/.local/share/nvim/site/pack/packer/start/tree-sitter-prisma",
+    url = "https://github.com/victorhqc/tree-sitter-prisma"
+  },
   ["vim-graphql"] = {
     loaded = true,
     path = "/home/tommy/.local/share/nvim/site/pack/packer/start/vim-graphql",

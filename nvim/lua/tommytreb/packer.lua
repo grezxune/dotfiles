@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
         --branch = 'release'
     --})
     use('jparise/vim-graphql')
+    use('victorhqc/tree-sitter-prisma')
 
     use('neovim/nvim-lspconfig')
     use('hrsh7th/nvim-cmp')
