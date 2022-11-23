@@ -23,7 +23,6 @@ VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 plugins=(
     npm
     vi-mode
-    composer
     cp
     dnf
     docker
@@ -47,7 +46,6 @@ export KEYTIMEOUT=15
 typeset -U path cdpath fpath
 path=(
     $HOME/.local/bin
-    $HOME/.config/composer/vendor/bin
     $HOME/.go/bin
     $HOME/.cargo/bin
     $HOME/go/bin
@@ -104,9 +102,6 @@ open () {
     xdg-open $* > /dev/null 2>&1
 }
 
-composer-link() {
-    composer config repositories.local '{"type": "path", "url": "'$1'"}' --file composer.json
-}
 
 #--------------------------------------------------------------------------
 # Miscellaneous
@@ -145,5 +140,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-[[ -s /home/tommy/.autojump/etc/profile.d/autojump.sh ]] && source /home/tommy/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
+eval "$(zoxide init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

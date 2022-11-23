@@ -35,6 +35,7 @@ return require('packer').startup(function(use)
     --use("williamboman/mason-lspconfig.nvim")
     --use("mfussenegger/nvim-dap")
     --use("jose-elias-alvarez/null-ls.nvim")
+    use('tjdevries/cyclist.vim')
 
     -- Color Schemes
     use('folke/tokyonight.nvim')
@@ -42,4 +43,7 @@ return require('packer').startup(function(use)
     use('xiyaowong/nvim-transparent')
     use('nvim-tree/nvim-web-devicons')
     use('feline-nvim/feline.nvim')
+    use({ 'catppuccin/nvim', as = 'catppuccin' })
+
+    use({ 'romgrk/barbar.nvim' })
 end)

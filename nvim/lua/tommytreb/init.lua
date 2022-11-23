@@ -2,6 +2,7 @@ require("tommytreb.set")
 require("tommytreb.remap")
 require("tommytreb.lsp")
 require("tommytreb.nvim-cmp")
+require('tommytreb.autocommands')
 
 require("transparent").setup({
     enable = true
