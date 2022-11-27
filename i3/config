@@ -21,7 +21,8 @@ font pango:DejaVu Sans Mono 20px
 # Thanks Childz
 for_window [class="^.*"] border pixel 2
                           # class                 border  backgr. text    indicator child_border
-for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
+#for_window [class="^.*"] client.focused #77dd77 #285577 #ffffff #2e9ef4
+#client.focused          #4c7899 #285577 #ffffff #2e9ef4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -309,6 +310,10 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# VPN Connection
+bindsym $mod+v exec nmcli con up id APA
+bindsym $mod+Shift+v exec nmcli con down id APA
 
 #exec --n o-startup-id xsetroot -solid "#333335"
 exec --no-startup-id feh --bg-fill $HOME/Documents/projects/nordic-wallpapers/wallpapers/nord_design.png
