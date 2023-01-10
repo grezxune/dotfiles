@@ -19,10 +19,11 @@ font pango:DejaVu Sans Mono 20px
 # GET DEM BORDERS OUT OF HEREc:w
 #
 # Thanks Childz
-for_window [class="^.*"] border pixel 2
-                          # class                 border  backgr. text    indicator child_border
+#for_window [class="^.*"] border pixel 5
+                  # class                 border  backgr. text    indicator child_border
 #for_window [class="^.*"] client.focused #77dd77 #285577 #ffffff #2e9ef4
-#client.focused          #4c7899 #285577 #ffffff #2e9ef4
+client.focused          #4c7899 #02B5A0 #ffffff #2e9ef4
+for_window [class="^.*"] border pixel 2
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -315,8 +316,13 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+v exec nmcli con up id APA
 bindsym $mod+Shift+v exec nmcli con down id APA
 
+exec xinput set-prop "Synaptics TM3512-010" "libinput Tapping Enabled" 1
+
 #exec --n o-startup-id xsetroot -solid "#333335"
-exec --no-startup-id feh --bg-fill $HOME/Documents/projects/nordic-wallpapers/wallpapers/nord_design.png
+exec --no-startup-id feh --bg-fill $HOME/Documents/projects/nordic-wallpapers/wallpapers/misty_mountains.jpg
 
 exec_always --no-startup-id compton --config $HOME/.config/i3/compton.conf
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --shades
+
+gaps inner 3px
+smart_gaps on

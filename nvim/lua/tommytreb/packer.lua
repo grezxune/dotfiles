@@ -36,6 +36,20 @@ return require('packer').startup(function(use)
     --use("mfussenegger/nvim-dap")
     --use("jose-elias-alvarez/null-ls.nvim")
     use('tjdevries/cyclist.vim')
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup({
+                current_line_blame = true,
+                current_line_blame_opts = {
+                    virt_text = true,
+                    virt_text_pos = 'eol',
+                    delay = 50,
+                    ignore_whitespace = false,
+                }
+            })
+        end
+    }
 
     -- Color Schemes
     use('folke/tokyonight.nvim')

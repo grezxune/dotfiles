@@ -40,6 +40,10 @@ source $ZSH/oh-my-zsh.sh
 # Configuration
 #--------------------------------------------------------------------------
 
+export ANDROID_HOME=~/Android/Sdk \
+export ANDROID_SDK_ROOT=~/Android/Sdk \
+export ANDROID_AVD_HOME=~/.android/avd
+
 # Decrease delay that vi-mode waits for the end of a key sequence
 export KEYTIMEOUT=15
 
@@ -54,6 +58,7 @@ path=(
     ./vendor/bin
     ${ANDROID_HOME}tools/
     ${ANDROID_HOME}platform-tools/
+    $HOME/Documents/android-studio/bin
     $path
 )
 
@@ -93,6 +98,7 @@ alias gaa="git add ."
 alias nah="git reset --hard;git clean -df"
 alias co="git checkout"
 alias main='git checkout $([ `git rev-parse --quiet --verify master` ] && echo "master" || echo "main")'
+alias lg="lazygit"
 
 # Docker
 alias d="docker"
@@ -144,3 +150,5 @@ autoload -U compinit && compinit -u
 eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
