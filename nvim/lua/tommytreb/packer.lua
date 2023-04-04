@@ -1,63 +1,80 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function(use)
-    -- Packer can manage itself
-    use('wbthomason/packer.nvim')
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
 
-    -- All the things
-    use('nvim-telescope/telescope.nvim')
-    use('nvim-lua/plenary.nvim')
-    use('nvim-telescope/telescope-fzf-native.nvim')
-    use({
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    })
-    use('ThePrimeagen/harpoon')
-    use('ThePrimeagen/git-worktree.nvim')
-    --use({
-        --'neoclide/coc.nvim',
-        --branch = 'release'
-    --})
-    use('jparise/vim-graphql')
-    use('victorhqc/tree-sitter-prisma')
+  use {
+	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	  -- or                            , branch = '0.1.x',
+	  requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
-    use('neovim/nvim-lspconfig')
-    use('hrsh7th/nvim-cmp')
-    use('hrsh7th/cmp-nvim-lsp')
-    use('hrsh7th/cmp-buffer')
-    use('hrsh7th/cmp-path')
-    use('L3MON4D3/LuaSnip')
-    use('saadparwaiz1/cmp_luasnip')
-    --use("williamboman/mason.nvim")
-    --use("williamboman/mason-lspconfig.nvim")
-    --use("mfussenegger/nvim-dap")
-    --use("jose-elias-alvarez/null-ls.nvim")
-    use('tjdevries/cyclist.vim')
-    use {
-        'lewis6991/gitsigns.nvim',
-        config = function()
-            require('gitsigns').setup({
-                current_line_blame = true,
-                current_line_blame_opts = {
-                    virt_text = true,
-                    virt_text_pos = 'eol',
-                    delay = 50,
-                    ignore_whitespace = false,
-                }
-            })
-        end
-    }
+  use({
+	  'rose-pine/neovim',
+	  as = 'rose-pine',
+	  config = function()
+		  vim.cmd('colorscheme rose-pine')
+	  end
+  })
 
-    -- Color Schemes
-    use('folke/tokyonight.nvim')
-    use('EdenEast/nightfox.nvim')
-    use('xiyaowong/nvim-transparent')
-    use('nvim-tree/nvim-web-devicons')
-    use('feline-nvim/feline.nvim')
-    use({ 'catppuccin/nvim', as = 'catppuccin' })
+  use({
+      "folke/trouble.nvim",
+      config = function()
+          require("trouble").setup {
+              icons = false,
+              -- your configuration comes here
+              -- or leave it empty to use the default settings
+              -- refer to the configuration section below
+          }
+      end
+  })
 
-    use({ 'romgrk/barbar.nvim' })
+
+  use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
+  use("nvim-treesitter/playground")
+  use("theprimeagen/harpoon")
+  use("theprimeagen/refactoring.nvim")
+  use("mbbill/undotree")
+  use("tpope/vim-fugitive")
+  use("nvim-treesitter/nvim-treesitter-context");
+
+  use {
+	  'VonHeikemen/lsp-zero.nvim',
+	  branch = 'v1.x',
+	  requires = {
+		  -- LSP Support
+		  {'neovim/nvim-lspconfig'},
+		  {'williamboman/mason.nvim',
+            run = ":MasonUpdate"
+          },
+		  {'williamboman/mason-lspconfig.nvim'},
+
+		  -- Autocompletion
+		  {'hrsh7th/nvim-cmp'},
+		  {'hrsh7th/cmp-buffer'},
+		  {'hrsh7th/cmp-path'},
+		  {'saadparwaiz1/cmp_luasnip'},
+		  {'hrsh7th/cmp-nvim-lsp'},
+		  {'hrsh7th/cmp-nvim-lua'},
+
+		  -- Snippets
+		  {'L3MON4D3/LuaSnip'},
+		  {'rafamadriz/friendly-snippets'},
+	  }
+  }
+
+  use("folke/zen-mode.nvim")
+  use("github/copilot.vim")
+  use("eandrju/cellular-automaton.nvim")
+  use("laytan/cloak.nvim")
+
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
 end)

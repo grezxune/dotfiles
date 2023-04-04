@@ -25,3 +25,5 @@ nnoremap('<leader>gt', '<cmd>BufferPrevious<cr>', silent)
 nnoremap('<leader>ob', '<cmd>BufferOrderByDirectory<cr>', silent)
 nnoremap('<leader>Q', '<cmd>BufferClose<cr>', silent)
 nnoremap('<leader><leader>Q', '<cmd>BufferCloseAllButCurrent<cr>', silent)
+
+nnoremap('<leader>f', vim.lsp.buf.format)
