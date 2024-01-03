@@ -34,11 +34,14 @@ return require('packer').startup(function(use)
   })
 
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+  use("nvim-treesitter/nvim-treesitter-context");
+
   use({
     "theprimeagen/harpoon",
     branch = "harpoon2",
     requires = { { "nvim-lua/plenary.nvim" } }
   })
+
   use({
     "jiaoshijie/undotree",
     config = function()
@@ -48,12 +51,12 @@ return require('packer').startup(function(use)
       "nvim-lua/plenary.nvim"
     }
   })
-  use("tpope/vim-fugitive")
-  use("nvim-treesitter/nvim-treesitter-context");
+
+  use("tpope/vim-fugitive") -- Inline GIT integration (:Git {command})
 
   use {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
+    branch = 'v3.x',
     requires = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' },
@@ -77,23 +80,11 @@ return require('packer').startup(function(use)
     }
   }
 
-  use("folke/zen-mode.nvim")
-  use("github/copilot.vim")
-  use("eandrju/cellular-automaton.nvim")
-
   -- Tommy added these
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
-
-  -- Autoformat on save
-  use({
-    "lukas-reineke/lsp-format.nvim",
-    config = function()
-      require('lsp-format').setup()
-    end
-  })
 
   -- Commenting code
   use {

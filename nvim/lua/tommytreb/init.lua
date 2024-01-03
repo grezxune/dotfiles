@@ -39,3 +39,10 @@ require('lualine').setup({
     theme = 'gruvbox'
   }
 })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    vim.lsp.buf.format()
+  end,
+})
