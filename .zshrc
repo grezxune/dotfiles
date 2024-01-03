@@ -47,8 +47,8 @@ source $ZSH/oh-my-zsh.sh
 # Configuration
 #--------------------------------------------------------------------------
 
-export ANDROID_HOME=~/Android/Sdk \
-export ANDROID_SDK_ROOT=~/Android/Sdk \
+export ANDROID_HOME=~/Library/Android/Sdk \
+export ANDROID_SDK_ROOT=~/Library/Android/Sdk \
 export ANDROID_AVD_HOME=~/.android/avd
 
 # Decrease delay that vi-mode waits for the end of a key sequence
@@ -66,6 +66,7 @@ path=(
     ${ANDROID_HOME}tools/
     ${ANDROID_HOME}platform-tools/
     $HOME/Documents/android-studio/bin
+    $HOME/nvim-macos-dev/bin
     $path
 )
 
@@ -156,3 +157,11 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 autoload -U compinit && compinit -u
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# pnpm
+export PNPM_HOME="/Users/tommy/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
