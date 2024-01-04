@@ -96,4 +96,26 @@ return require('packer').startup(function(use)
 
   -- git
   use { 'lewis6991/gitsigns.nvim' }
+
+  use({
+    "epwalsh/obsidian.nvim",
+    tag = "*", -- recommended, use latest release instead of latest commit
+    requires = {
+      -- Required.
+      "nvim-lua/plenary.nvim",
+
+      -- see below for full list of optional dependencies 👇
+    },
+    config = function()
+      require("obsidian").setup({
+        workspaces = {
+          {
+            name = "personal",
+            path = "~/Documents/Obsidian/Default Vault",
+          },
+        },
+        -- see below for full list of options 👇
+      })
+    end,
+  })
 end)
