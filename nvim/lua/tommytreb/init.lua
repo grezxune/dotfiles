@@ -1,5 +1,6 @@
 require("tommytreb.set")
 require("tommytreb.remap")
+require("tommytreb.test")
 
 require("mason").setup()
 
@@ -19,7 +20,7 @@ autocmd('TextYankPost', {
   callback = function()
     vim.highlight.on_yank({
       higroup = 'IncSearch',
-      timeout = 40,
+      timeout = 150,
     })
   end,
 })
