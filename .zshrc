@@ -20,7 +20,7 @@ fi
 export ZSH=$HOME/.oh-my-zsh
 
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="~/powerlevel10k/powerlevel10k.zsh-theme"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
@@ -67,8 +67,17 @@ path=(
     ${ANDROID_HOME}platform-tools/
     $HOME/Documents/android-studio/bin
     $HOME/nvim-macos-dev/bin
+    /opt/homebrew/bin
+    /opt/homebrew/sbin
     $path
 )
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+# export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+
 
 setopt auto_cd
 cdpath=(
@@ -165,3 +174,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
+eval "$(zoxide init zsh)"
