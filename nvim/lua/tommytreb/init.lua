@@ -37,7 +37,7 @@ vim.g.netrw_winsize = 25
 
 require('lualine').setup({
   options = {
-    theme = 'gruvbox'
+    theme = 'gruvbox',
   }
 })
 
