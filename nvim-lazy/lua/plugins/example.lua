@@ -143,6 +143,7 @@ return {
     opts = {
       ensure_installed = {
         "bash",
+        "graphql",
         "html",
         "javascript",
         "json",
@@ -152,6 +153,7 @@ return {
         "python",
         "query",
         "regex",
+        "rust",
         "tsx",
         "typescript",
         "vim",
@@ -211,6 +213,15 @@ return {
         "flake8",
       },
     },
+  },
+
+  -- Inline git integration
+  { 'lewis6991/gitsigns.nvim',
+    opts = function()
+      require('gitsigns').setup({
+        current_line_blame = true,
+      })
+    end
   },
 
   -- Use <tab> for completion and snippets (supertab)
