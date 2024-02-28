@@ -65,9 +65,9 @@ return {
     -- change some options
     opts = {
       defaults = {
-        layout_strategy = "horizontal",
-        layout_config = { prompt_position = "top" },
-        sorting_strategy = "ascending",
+        layout_strategy = "vertical",
+        layout_config = { prompt_position = "bottom" },
+        sorting_strategy = "descending",
         winblend = 0,
       },
     },
@@ -216,7 +216,8 @@ return {
   },
 
   -- Inline git integration
-  { 'lewis6991/gitsigns.nvim',
+  {
+    'lewis6991/gitsigns.nvim',
     opts = function()
       require('gitsigns').setup({
         current_line_blame = true,
