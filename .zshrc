@@ -104,9 +104,9 @@ unsetopt sharehistory
 alias vim="nvim"
 alias copy="xclip -selection clipboard"
 alias paste="xclip -o -selection clipboard"
-alias cat="batcat"
 alias webcam="gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video2"
 alias sail='[ -f sail ] && sail || vendor/bin/sail'
+alias cat="cat"
 
 # Git
 alias g="git"
@@ -182,3 +182,4 @@ eval "$(zoxide init zsh)"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export VOLTA_FEATURE_PNPM=1
+export APOLLO_KEY=user:po.marriott.ttrze868:w9UmPI-jOB39CdHnoSHCWA
