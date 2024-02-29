@@ -99,6 +99,7 @@ vim.g.maplocalleader = ' '
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 
 -- Make line numbers default
 vim.opt.number = true
@@ -158,7 +159,11 @@ vim.opt.scrolloff = 10
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<cr>')
+
+-- Markdown Preview Keys
+vim.keymap.set('n', '<leader>mp', '<cmd>MarkdownPreview<cr>', { desc = 'Markdown Preview' })
+vim.keymap.set('n', '<leader>mP', '<cmd>MarkdownPreviewStop<cr>', { desc = 'Markdown Preview Stop' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
@@ -210,6 +215,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_create_autocmd('BufEnter', {
+  desc = 'Set shiftwidth and expandtab',
+  group = vim.api.nvim_create_augroup('enter-buffer-settings', { clear = true }),
+  callback = function()
+    if vim.bo.modifiable then
+      vim.opt.tabstop = 2
+      vim.opt.shiftwidth = 2
+      vim.cmd 'retab'
+    end
+  end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -235,7 +252,7 @@ require('lazy').setup {
   -- [[ Plugin Specs list ]]
 
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
