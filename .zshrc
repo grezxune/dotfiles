@@ -26,6 +26,7 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 #VI_MODE_SET_CURSOR=true
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+VOLTA_HOME=$HOME/.volta
 
 plugins=(
     npm
@@ -37,7 +38,7 @@ plugins=(
     git
     httpie
     rsync
-    #tmux
+    # tmux
     z
 )
 
@@ -68,7 +69,7 @@ path=(
     $HOME/Documents/android-studio/bin
     $HOME/nvim-macos-dev/bin
     /opt/homebrew/bin
-    /opt/homebrew/sbin
+    $VOLTA_HOME/bin
     $path
 )
 export HOMEBREW_PREFIX="/opt/homebrew";
@@ -106,7 +107,7 @@ alias copy="xclip -selection clipboard"
 alias paste="xclip -o -selection clipboard"
 alias webcam="gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video2"
 alias sail='[ -f sail ] && sail || vendor/bin/sail'
-alias cat="cat"
+alias cat='cat'
 
 # Git
 alias g="git"
@@ -157,24 +158,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 autoload -U compinit && compinit -u
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# pnpm
-export PNPM_HOME="/Users/tommy/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
@@ -183,3 +176,6 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export VOLTA_FEATURE_PNPM=1
 export APOLLO_KEY=user:po.marriott.ttrze868:w9UmPI-jOB39CdHnoSHCWA
+
+# To customize prompt, run `p10k configure` or edit ~/Documents/code/dotfiles/.p10k.zsh.
+[[ ! -f ~/Documents/code/dotfiles/.p10k.zsh ]] || source ~/Documents/code/dotfiles/.p10k.zsh
