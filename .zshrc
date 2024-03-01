@@ -95,9 +95,9 @@ unsetopt sharehistory
 alias vim="nvim"
 alias copy="xclip -selection clipboard"
 alias paste="xclip -o -selection clipboard"
-alias cat="batcat"
 alias webcam="gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video2"
 alias sail='[ -f sail ] && sail || vendor/bin/sail'
+alias cat='cat'
 
 # Git
 alias g="git"
