@@ -117,6 +117,7 @@ alias nah="git reset --hard;git clean -df"
 alias co="git checkout"
 alias main='git checkout $([ `git rev-parse --quiet --verify master` ] && echo "master" || echo "main")'
 alias lg="lazygit"
+alias cpw="~/documents/code/scripts/cpw.sh"
 
 # Docker
 alias d="docker"
