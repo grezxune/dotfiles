@@ -26,6 +26,7 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 #VI_MODE_SET_CURSOR=true
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+ZETTELKASTEN_LOCATION="/Users/Tommy/Documents/obsidian/zettelkasten"
 
 plugins=(
     npm
