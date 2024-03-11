@@ -59,14 +59,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.api.nvim_create_autocmd('BufEnter', {
-  desc = 'Set shiftwidth and expandtab',
-  group = vim.api.nvim_create_augroup('enter-buffer-settings', { clear = true }),
-  callback = function()
-    if vim.bo.modifiable then
-      vim.opt.tabstop = 2
-      vim.opt.shiftwidth = 2
-      vim.cmd 'retab'
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd('BufEnter', {
+--   desc = 'Set shiftwidth and expandtab',
+--   group = vim.api.nvim_create_augroup('enter-buffer-settings', { clear = true }),
+--   callback = function()
+--     if vim.bo.modifiable then
+--       vim.opt.tabstop = 2
+--       vim.opt.shiftwidth = 2
+--       vim.cmd 'retab'
+--     end
+--   end,
+-- })

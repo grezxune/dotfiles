@@ -1,36 +1,17 @@
-local Zettel = {}
+return {
+  'grezxune/zettel.nvim',
+  -- dir = '~/Documents/code/zettel.nvim/',
+  config = function()
+    local Zettel = require 'zettel'
 
-function Zettel.setup()
-  vim.keymap.set('n', '<leader>cz', function()
-    local test = vim.fn.input 'Enter Zettel name:'
-    print('You entered' .. tostring(test) .. '!!! WOOO!!!')
+    local myZettel = Zettel.setup {
+      template_file = '/Users/tommy/Documents/obsidian/zettelkasten/template.md',
+      destination_location = '/Users/tommy/Documents/obsidian/zettelkasten',
+      note_file_format = '.md',
+    }
 
-    local filename = os.date '%m%d%Y%H%M%S'
-    local filename_with_ext = tostring(filename) .. '.md'
-
-    local file = io.open(filename_with_ext, 'w')
-
-    if file then
-      local file_contents = [[
----
-id: ]] .. filename .. [[
-
-createdAt: ]] .. tostring(os.date '%x') .. [[
-
----
-
-# Body
-> The piece of knowledge you wish to capture
-
-# References
-> Where did this thought come from? If from yourself, leave blank.]]
-
-      file:write(file_contents)
-      file:close()
-
-      vim.cmd('e' .. filename_with_ext)
-    end
-  end, { desc = 'Create Zettel' })
-end
-
-return Zettel
+    vim.keymap.set('n', '<leader>cz', function()
+      myZettel:new()
+    end, { desc = 'Create Zettel' })
+  end,
+}
